@@ -1,6 +1,7 @@
 function getInput(idName){
     const inputFeild = document.getElementById(idName+'-input');
     const inputText = inputFeild.value;
+    // inputFeild.value = '';
     const inputFloat = parseFloat(inputText);
     if(!isNaN(inputFloat) && inputFloat>0){
         return inputFloat;
@@ -12,14 +13,16 @@ function getInput(idName){
 }
 
 function updateBalanceStatus(amount,isSaving){
+    // debugger;
     const balance = getInput('income');
     
     if(isSaving){
         const savedAmount = balance*getInput('saving')/100;
+        // const amount = ;
         if(amount < savedAmount){
             alert("You can't save this amount because remaining balance is not sufficent");
         }
-        else{
+        else if(!isNaN(savedAmount)){
             document.getElementById('saving').innerText= savedAmount;
             document.getElementById('balance-with-saving').innerText =  amount - savedAmount;
         }
@@ -37,7 +40,10 @@ function updateBalanceStatus(amount,isSaving){
 
 function addExpence(foodExpence, rentExpencce , clothsExpece){
     const totalExpence = foodExpence + rentExpencce + clothsExpece;
-    updateBalanceStatus(totalExpence, false);
+    if(!isNaN(totalExpence)){
+        updateBalanceStatus(totalExpence, false);
+    }
+    
 }
 
 document.getElementById('calculate-btn').addEventListener('click',function (){
