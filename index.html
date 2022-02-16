@@ -7,8 +7,77 @@
     <title>Expense planer</title>
     <!-- Bootstrap linked -->
     <link rel="stylesheet" href="/style/bootstrap.min.css">
+    <!-- vanila css -->
+    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
-    <h1 class="text-center mt-5">Expense planer</h1>
+    <header>
+        <h1 class="text-center mt-5 fs-1 heading fw-bolder">Expense planer</h1>
+    </header>
+    <main>
+        <section class="container mt-5">
+            <div class="row gx-5">
+                <div class="col-lg-6 col-sm-12 rounded">
+                    <img src="/img/manager.jpg" class="img-fluid mt-5 rounded" height="200px" alt="">
+                </div>
+                <div class="col-lg-6 col-sm-12 text-center rounded">
+                    <!-- income input -->
+                    <div class="my-3">
+                        <h3>Income</h3>
+                        <p class="d-inline fw-bold">Income : </p>
+                        <!-- -------income--------- -->
+                        <input id="income-input" type="text" class="input-field " >
+                    </div>
+                    <!-- Expense -->
+                    <div class="my-2">
+                        <h3>Expense</h3>
+                        <div class="my-2">
+                            <!-- ------food------- -->
+                            <p class="d-inline fw-bold">Food : </p>
+                            <input id="food-input" type="text" class="input-field "> 
+                        </div>
+                        <div class="my-2">
+                            <!-- rent -->
+                            <p class="d-inline fw-bold">Rent : </p>
+                            <input id="rent-input"  type="text" class="input-field ">
+                        </div> 
+                        <div class="my-2">
+                            <!-- cloths -->
+                            <p class="d-inline fw-bold">Cloths : </p>
+                            <input id="cloths-input"  type="text" class="input-field">
+                        </div>
+                    </div>
+
+                    <!-- ------------------------------------------calculation button------------------------- -->
+
+                    <button id="calculate-btn" class="bg-primary text-white border-0 my-3 py-2 px-5 rounded fs-5 fw-bold">Calculate</button>
+                    
+                    <!-- status before svings -->
+
+                    <div class="text-center my-2 fw-bold fs-5">
+                        <p>Total Expense : <span id="expence">0</span></p>
+                        <p>Total Balance : <span id="balance-no-saving">0</span></p>
+                    </div>
+
+                    <!-- savings -->
+
+                    <div>
+                        <p class="d-inline fw-bold">Save :</p>
+                        <input id="saving-input" type="text" class="input-field me-2">
+                        <p class="d-inline">%</p>
+                        <button id="save-btn" class="bg-primary text-white border-0 rounded py-1 px-2 fw-bold w-3">Save</button>
+                    </div>
+                    <!-- amount after savings -->
+                    <div class="text-center my-2 fw-bold fs-5">
+                        <p>Total saved : <span id="saving">0</span></p>
+                        <p>Total Balance(after saving) : <span id="balance-with-saving">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- javaScript -->
+    <script src="js/app.js"></script>
 </body>
 </html>

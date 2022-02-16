@@ -1,0 +1,11 @@
+.heading{
+    color: olive;
+}
+
+.input-field{
+    background-color: #f8ea9770;
+    border: #8f7d7dbb;
+    border-radius: 5px;
+    height: 2rem;
+    width: 40%;
+}
