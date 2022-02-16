@@ -1,7 +1,6 @@
 function getInput(idName){
     const inputFeild = document.getElementById(idName+'-input');
     const inputText = inputFeild.value;
-    // inputFeild.value = '';
     const inputFloat = parseFloat(inputText);
     if(!isNaN(inputFloat) && inputFloat>0){
         return inputFloat;
@@ -13,12 +12,10 @@ function getInput(idName){
 }
 
 function updateBalanceStatus(amount,isSaving){
-    // debugger;
     const balance = getInput('income');
     
     if(isSaving){
         const savedAmount = balance*getInput('saving')/100;
-        // const amount = ;
         if(amount < savedAmount){
             alert("You can't save this amount because remaining balance is not sufficent");
         }
